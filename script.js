@@ -8,11 +8,21 @@ const courses = [
     { name: "Anrechnungskurs 1", factor: 4 },
     { name: "Anrechnungskurs 2", factor: 4 }
   ];
+
+  const emojiGrade = [
+    { grade: 1, emoji: "(sorry du medizin student:in 😒)" },
+    { grade: 1.9, emoji: "🤓" },
+    { grade: 2.9, emoji: "😎" },
+    { grade: 3.9, emoji: "🤌" },
+    { grade: 4, emoji: "👀" },
+    { grade: 6, emoji: "❌" }
+  ];
   
   const state = Array(courses.length).fill(null);
   const container = document.getElementById("courses");
   const totalSpan = document.getElementById("total");
   const gradeSpan = document.getElementById("grade");
+  const emojiSpan = document.getElementById("emoji");
   
   function renderCourses() {
     courses.forEach((course, index) => {
@@ -68,6 +78,7 @@ const courses = [
 
     totalSpan.textContent = total;
     gradeSpan.textContent = gradeRounded;
+    emojiSpan.textContent = getEmojiFromGrade(gradeRounded);
   }
 
   function loadStoredData() {
@@ -83,6 +94,11 @@ const courses = [
         });
       }
     });
+  } 
+
+  function getEmojiFromGrade(grade) {
+    const match = emojiGrade.find(e => grade <= e.grade);
+    return match ? match.emoji : "-";
   }  
   
   window.onload = () => {
