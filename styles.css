@@ -4,6 +4,11 @@ body {
     margin: 0;
     padding: 20px;
   }
+
+  :root {
+    touch-action: pan-x pan-y;
+    height: 100% 
+  }
   
   .container {
     max-width: 800px;
@@ -52,3 +57,119 @@ body {
     font-size: 1.5em;
   }
   
+  .course.simple {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 8px 0;
+  }
+  
+  .simple-points {
+    margin: 0 10px;
+    font-weight: bold;
+    width: 24px;
+    display: inline-block;
+    text-align: left;
+  }
+  
+  .toggle-switch {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .switch-label {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    background: #ddd;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: sans-serif;
+    overflow: hidden;
+  }
+  
+  .switch-left,
+  .switch-right {
+    flex: 1;
+    text-align: center;
+    z-index: 2;
+    font-size: 14px;
+    font-weight: 600;
+    pointer-events: none;
+    color: #333;
+  }
+  
+  .switch-slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(50% - 4px);
+    height: 36px;
+    background: #4caf50;
+    border-radius: 18px;
+    transition: left 0.3s ease;
+    z-index: 1;
+  }
+  
+  /* Wenn aktiviert (Fortgeschritten ausgewählt) */
+  #viewToggle:checked + .switch-label .switch-slider {
+    left: calc(50% + 2px);
+  }
+  
+  #viewToggle {
+    display: none;
+  }
+  
+  .simple-table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .simple-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 12px;
+    background: #f9f9f9;
+  }
+  
+  .simple-cell {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .label {
+    font-weight: 600;
+  }
+  
+  .value {
+    font-size: 16px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .icon-btn {
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .icon-btn:hover {
+    background-color: #45a047;
+  }
