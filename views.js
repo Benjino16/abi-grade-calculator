@@ -55,7 +55,7 @@ function renderSimpleView() {
   
       const value = document.createElement("div");
       value.className = "simple-cell value";
-      value.textContent = `${state[index]} / 15`;
+      value.innerHTML = `<span class="points">${state[index]}</span><span class="out-of"> / 15</span>`;
       value.id = `simple-points-${index}`;
   
       const buttons = document.createElement("div");
@@ -67,7 +67,8 @@ function renderSimpleView() {
       minus.onclick = () => {
         if (state[index] > 0) {
           updateNote(index, state[index] - 1);
-          document.getElementById(`simple-points-${index}`).textContent = `${state[index]} / 15`;
+          document.getElementById(`simple-points-${index}`).innerHTML = `<span class="points">${state[index]}</span><span class="out-of"> / 15</span>`;
+
         }
       };
   
@@ -77,7 +78,7 @@ function renderSimpleView() {
       plus.onclick = () => {
         if (state[index] < 15) {
           updateNote(index, state[index] + 1);
-          document.getElementById(`simple-points-${index}`).textContent = `${state[index]} / 15`;
+          document.getElementById(`simple-points-${index}`).innerHTML = `<span class="points">${state[index]}</span><span class="out-of"> / 15</span>`;
         }
       };
   

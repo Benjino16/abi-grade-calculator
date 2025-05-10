@@ -91,3 +91,14 @@
   .icon-btn:hover {
     background-color: #45a047;
   }
+
+  .points {
+  font-weight: bold;
+  font-size: 18px;
+  color: #4caf50;
+}
+
+.out-of {
+  color: #888;
+  font-size: 10px;
+}
