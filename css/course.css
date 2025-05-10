@@ -1,0 +1,93 @@
+.course {
+    margin-bottom: 20px;
+  }
+  
+  .course-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .note-options {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  
+  .note-btn {
+    padding: 8px 12px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .note-btn.selected {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  .course.simple {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 8px 0;
+  }
+  
+  .simple-points {
+    margin: 0 10px;
+    font-weight: bold;
+    width: 24px;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .simple-table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .simple-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 12px;
+    background: #f9f9f9;
+  }
+  
+  .simple-cell {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .label {
+    font-weight: 600;
+  }
+  
+  .value {
+    font-size: 16px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .icon-btn {
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .icon-btn:hover {
+    background-color: #45a047;
+  }
