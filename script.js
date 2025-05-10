@@ -1,4 +1,5 @@
 window.onload = () => {
+  showLegalOverlayIfNeeded();
   document.getElementById("viewToggle").checked = false;
   loadStoredData();
   renderCourses();
@@ -14,5 +15,28 @@ window.onload = () => {
   showCriteriaCheckbox.addEventListener("change", () => {
     updateCriteriaResults();
   }); 
+
+  document.getElementById("openLegalLink").onclick = (e) => {
+    e.preventDefault();
+    document.getElementById("legalOverlay").style.display = "flex";
+  };  
   
 };
+
+function showLegalOverlayIfNeeded() {
+  const accepted = localStorage.getItem("legalAccepted");
+  const overlay = document.getElementById("legalOverlay");
+  const button = document.getElementById("acceptLegalBtn");
+
+  // Handler wird immer gesetzt, auch wenn overlay später geöffnet wird
+  button.onclick = () => {
+    localStorage.setItem("legalAccepted", "true");
+    overlay.style.display = "none";
+  };
+
+  if (!accepted) {
+    overlay.style.display = "flex";
+  }
+}
+
+

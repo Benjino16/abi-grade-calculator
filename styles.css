@@ -327,5 +327,70 @@ body {
   .toggle-switch input:not(:checked) + .toggle-slider .off {
     opacity: 1;
   }
+
+  .legal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* wird per JS eingeblendet */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .legal-box {
+    background: white;
+    border-radius: 12px;
+    max-width: 640px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  
+  .legal-iframe {
+    border: none;
+    height: 400px;
+    width: 100%;
+  }
+  
+  #acceptLegalBtn {
+    padding: 12px;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  
+  #acceptLegalBtn:hover {
+    background-color: #43a047;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .footer a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
   
   
