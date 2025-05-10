@@ -19,7 +19,13 @@ window.onload = () => {
   document.getElementById("openLegalLink").onclick = (e) => {
     e.preventDefault();
     document.getElementById("legalOverlay").style.display = "flex";
-  };  
+  }; 
+
+  document.getElementById("resetButton").addEventListener("click", () => {
+    resetNotes();
+    loadStoredData();
+    renderCourses();
+  });
   
 };
 
@@ -39,4 +45,17 @@ function showLegalOverlayIfNeeded() {
   }
 }
 
+function showDataOverlay() {
+  const overlay = document.getElementById("legalOverlay");
+  const button = document.getElementById("acceptLegalBtn");
 
+  // Handler wird immer gesetzt, auch wenn overlay später geöffnet wird
+  button.onclick = () => {
+    localStorage.setItem("legalAccepted", "true");
+    overlay.style.display = "none";
+  };
+
+  if (!accepted) {
+    overlay.style.display = "flex";
+  }
+}

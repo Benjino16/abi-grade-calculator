@@ -96,3 +96,9 @@ function updateNote(index, note) {
   saveNote(index, note);
   renderCourses();
 }
+
+function resetNotes() {
+  courses.forEach((_, index) => {
+      saveNote(index, 10)
+    });
+}
