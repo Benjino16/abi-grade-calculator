@@ -1,4 +1,4 @@
-let isAdvancedView = true;
+let isAdvancedView = false;
 const container = document.getElementById("courses");
 
 function toggleViewMode() {

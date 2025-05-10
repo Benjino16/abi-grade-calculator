@@ -1,5 +1,5 @@
 window.onload = () => {
-  document.getElementById("viewToggle").checked = true;
+  document.getElementById("viewToggle").checked = false;
   loadStoredData();
   renderCourses();
 
@@ -7,5 +7,12 @@ window.onload = () => {
     isAdvancedView = document.getElementById("viewToggle").checked;
     renderCourses();
   });
+
+  const showCriteriaCheckbox = document.getElementById("showCriteria");
+  const resultList = document.getElementById("criteriaResults");
+
+  showCriteriaCheckbox.addEventListener("change", () => {
+    updateCriteriaResults();
+  }); 
   
 };

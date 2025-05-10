@@ -10,6 +10,17 @@ function calculateTotal() {
     document.getElementById("total").textContent = total;
     document.getElementById("grade").textContent = rounded;
     document.getElementById("emoji").textContent = getEmojiFromGrade(rounded);
+
+    updateCriteriaResults();
+
+    const warningText = document.getElementById("criteriaWarning");
+    const hasCriteriaErrors = checkAbiCriteria().length > 0;
+
+    if (hasCriteriaErrors) {
+    warningText.style.display = "inline";
+    } else {
+    warningText.style.display = "none";
+    }
   }
   
   function getEmojiFromGrade(grade) {
@@ -24,4 +35,21 @@ function calculateTotal() {
     const match = emojiGrade.find(e => grade <= e.grade);
     return match ? match.emoji : "-";
   }
+
+  function updateCriteriaResults() {
+    const showCriteriaCheckbox = document.getElementById("showCriteria");
+    const resultList = document.getElementById("criteriaResults");
+
+    if (!showCriteriaCheckbox.checked) {
+      resultList.style.display = "none";
+      return;
+    }
+  
+    const errors = checkAbiCriteria();
+    resultList.innerHTML = errors.length === 0
+      ? "<li style='color: green;'>✅ Alle Kriterien erfüllt</li>"
+      : errors.map(err => `<li>❌ ${err}</li>`).join("");
+    resultList.style.display = "block";
+  }
+  
   

@@ -25,15 +25,36 @@
     </div>
 
     <div class="result">
-      <h2>Gesamtpunktzahl: <span id="total">0</span></h2>
-      <h2>Note: <span id="grade">0</span> <span id="emoji">X</span></h2>
+      <h2>Punkte: <span id="total">0</span></h2>
+      <h2>
+        Note: <span id="grade">0</span> <span id="emoji">X</span>
+        <span id="criteriaWarning" class="warning-text" style="display: none;">⚠️ Kriterien nicht erfüllt</span>
+      </h2>
+      
     </div>
-  </div>
 
+    <div class="check-container">
+      <div class="toggle-button-wrapper">
+        <label class="toggle-switch">
+          <input type="checkbox" id="showCriteria" />
+          <span class="toggle-slider">
+            <span class="toggle-text on">Kriterien an</span>
+            <span class="toggle-text off">Kriterien aus</span>
+          </span>
+        </label>
+      </div>
+
+      <ul id="criteriaResults" class="criteria-list" style="display: none;"></ul>
+    </div>
+    
+  </div>
+  
+  <script src="checkCriteria.js"></script>
   <script src="state.js"></script>
   <script src="storage.js"></script>
   <script src="calculation.js"></script>
   <script src="views.js"></script>
   <script src="script.js"></script>
+
 </body>
 </html>
