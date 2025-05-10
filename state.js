@@ -10,5 +10,5 @@ const courses = [
   ];
   
   
-  const state = Array(courses.length).fill(0);
+  const state = Array(courses.length).fill(10);
   
